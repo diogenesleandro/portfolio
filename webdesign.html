@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- CSS do Bootstrap -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- JS do Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLLPereira - Soluções Digitais</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header id="header">
+        <a href="index.html">
+            <img src="logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="header-content" id="header-content">
+            <p class="fade-text" id="p1">OLÁ! <span id="p2">Eu sou</span></p>
+            <p class="fade-text" id="p3"><span>desenvolvedor web</span></p>
+            <p class="fade-text" id="p4">de Itanhaém</p>
+        </div>
+        <img src="bg1.png" alt="Carrossel" class="header-image" id="header-image">
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    </header>
+
+    <nav id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="criativos.html">Social Media</a>
+        <a href="idvisual.html">Identidade Visual</a>
+        <a href="webdesign.html">Web Design</a>
+        <a href="webdeveloper.html">Web Developer</a>
+    </nav>
+
+    <div class="container">
+        <div class="content" id="cardContainer">
+
+            <div class="card" id="cardHome" style="min-height: 350px; background-color: black; padding: 20px;">
+                <h3 style="color: #cc3300; text-align: center; padding-bottom: 20px;">WEB DESIGN</h3>
+                
+                
+            </div>
+            
+            <div class="card" id="cardSobre" style="min-height: 350px; background-color: black; padding: 20px; display: none;">
+                <h3 style="color: #cc3300; text-align: center; padding-bottom: 20px;">MINHA TRAJETÓRIA</h3>
+            
+                <div class="timeline">
+                    <div class="timeline-year" data-year="1995">1995</div>
+                    <div class="timeline-year" data-year="2002">2002</div>
+                    <div class="timeline-year" data-year="2003">2003</div>
+                    <div class="timeline-year" data-year="2007">2007</div>
+                    <div class="timeline-year" data-year="2008">2008</div>
+                    <div class="timeline-year" data-year="2009">2010</div>
+                    <div class="timeline-year" data-year="2011">2011</div>
+                    <div class="timeline-year" data-year="2017">2017</div>
+                    <div class="timeline-year" data-year="2021">2021</div>
+                    <div class="timeline-year" data-year="2023">2023</div>
+                </div>
+            
+                <div class="timeline-content">
+                    <div class="timeline-details" id="1995">
+                        <h4>1995</h4>
+                        <p>Comprei meu primeiro computador, um 486 dx2 com 66mhz de velocidade e sistema operacional D.O.S., depois instalei o Windows 3.11</p>
+                    </div>
+                    <div class="timeline-details" id="2002">
+                        <h4>2002 - 2006</h4>
+                        <p>Trabalhei como Oficial Administrativo na FATEC Praia Grande onde implantei toda rotina de gerenciamento de alunos da insituição</p>
+                    </div>
+                    <div class="timeline-details" id="2003">
+                        <h4>2003 - 2006</h4>
+                        <p>Cursei a faculdade de tecnologia em Informática com ênfase em gestão de negócios na FATEC Praia Grande</p>
+                    </div>
+                    <div class="timeline-details" id="2007">
+                        <h4>2007 - Atual</h4>
+                        <p>Professor de Ensino técnico em Informática na Etec Adolpho Berezin</p>
+                    </div>
+                    <div class="timeline-details" id="2008">
+                        <h4>2008 - Atual</h4>
+                        <p>Professor de Ensino técnico em Informática na Etec de Itanhaém</p>
+                    </div>
+                    <div class="timeline-details" id="2009">
+                        <h4>2009 - 2010</h4>
+                        <p>Pós Graduação em Banco de Dados</p>
+                    </div>
+                    <div class="timeline-details" id="2011">
+                        <h4>2011 - 2013</h4>
+                        <p>Professor do Curso Superior em Desenvolvimento de Sistemas na UNISEPE</p>
+                    </div>
+                    <div class="timeline-details" id="2017">
+                        <h4>2017 - 2019</h4>
+                        <p>Cursei o aperfeiçoamento em Ensino de Jovens e Adultos</p>
+                    </div>
+                    <div class="timeline-details" id="2021">
+                        <h4>2021 - 2023</h4>
+                        <p>Coordenação do curso técnico em Informática para Internet</p>
+                    </div>
+                    <div class="timeline-details" id="2023">
+                        <h4>2023 - 2024</h4>
+                        <p>Administração do site da etec de itanhaém</p>
+                    </div>
+                </div>
+            </div>        
+        </div>        
+    </div>
+
+    <!-- Botão "Voltar ao Topo" -->
+    <div class="back-to-top" id="backToTop">&#8679;</div>
+
+    <script>
+        const timelineYears = document.querySelectorAll('.timeline-year');
+const timelineDetails = document.querySelectorAll('.timeline-details');
+
+timelineYears.forEach(year => {
+    year.addEventListener('click', () => {
+        // Remove a classe ativa de todos os detalhes
+        timelineDetails.forEach(detail => detail.classList.remove('active'));
+
+        // Adiciona a classe ativa ao detalhe correspondente
+        const selectedYear = year.getAttribute('data-year');
+        document.getElementById(selectedYear).classList.add('active');
+
+        // Exibe a linha do tempo
+        document.querySelector('.timeline-content').style.display = 'block';
+    });
+});
+
+// Exibe o primeiro ano por padrão
+timelineYears[0].click();
+
+        let currentIndex = 0;
+        const headerContent = document.getElementById('header-content');
+        const headerImage = document.getElementById('header-image');
+
+        const carrosselData = [
+            {
+                image: 'bg1.png',
+                texts: ['id="p1">OLÁ! <span id="p2">Eu sou</span>', 'id="p3">desenvolvedor web', 'id="p4">de Itanhaém']
+            },
+            {
+                image: 'bg2.png',
+                texts: ['id="p1">Trabalho <span id="p2">com</span>', 'id="p3">Social Media', 'id="p4">e Design Gráfico']
+            },
+            {
+                image: 'bg3.png',
+                texts: ['id="p1">Sou <span id="p2">Professor</span>', 'id="p3">de Tecnologia', 'id="p4">da Informação']
+            }
+        ];
+
+        function updateCarrossel() {
+            headerContent.style.opacity = 0;
+            headerImage.style.opacity = 0;
+
+            setTimeout(() => {
+                headerContent.innerHTML = carrosselData[currentIndex].texts.map(text => `<p class="fade-text"${text}</p>`).join('');
+                headerImage.src = carrosselData[currentIndex].image;
+
+                headerContent.style.opacity = 1;
+                headerImage.style.opacity = 1;
+
+                currentIndex = (currentIndex + 1) % carrosselData.length;
+            }, 1000);
+        }
+
+        setInterval(updateCarrossel, 5000);
+
+        function toggleMenu() {
+            var navMenu = document.getElementById("navMenu");
+            navMenu.classList.toggle("open");
+        }
+
+        window.onload = updateCarrossel;
+
+        // // Criar cards baseados nos itens do nav com IDs para âncoras
+        // const navLinks = document.querySelectorAll('#navMenu a');
+        // const cardContainer = document.getElementById('cardContainer');
+
+        // navLinks.forEach((link, index) => {
+        //     const card = document.createElement('div');
+        //     card.classList.add('card');
+        //     card.id = 'card' + link.textContent; // Define um ID único para cada card
+
+        //     const cardTitle = document.createElement('h2');
+        //     cardTitle.textContent = link.textContent;
+        //     card.appendChild(cardTitle);
+
+        //     const cardContent = document.createElement('p');
+        //     cardContent.textContent = `Conteúdo relacionado a ${link.textContent}.`;
+        //     card.appendChild(cardContent);
+
+        //     cardContainer.appendChild(card);
+
+        //     // Atualiza o href do link para apontar para o ID do card
+        //     link.href = `#${card.id}`;
+        // });
+
+        // Mostrar e esconder o botão "Voltar ao Topo" com base na rolagem
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        // Função para rolar para o topo
+        backToTopButton.onclick = function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            history.pushState(null, null, '#top');
+        };
+    </script>
+</body>
+</html>
